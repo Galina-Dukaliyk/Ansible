@@ -1,7 +1,7 @@
 [Unit]
 Description=Starting-petclinic-as-service
-Requires=cloud-sql-proxy-service
-After=cloud-sql-proxy-service
+Requires=cloud-sql-proxy.service
+After=cloud-sql-proxy.service
 
 [Service]
 WorkingDirectory=/opt
