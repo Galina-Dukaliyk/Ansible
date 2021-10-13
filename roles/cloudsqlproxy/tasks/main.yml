@@ -1,7 +1,4 @@
 ---
-- name: cloudsqlproxy
- 
-  tasks:
   - name: download CloudSQL Auth Proxy
     ansible.builtin.get_url:
       - url: https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64
@@ -33,7 +30,7 @@
 #
 # sudo systemctl enable cloud-sql-proxy
 #
-# 
+#
 # sudo systemctl start cloud-sql-proxy
 #
 # apt-get install default-mysql-client

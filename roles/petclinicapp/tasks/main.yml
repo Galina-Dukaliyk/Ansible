@@ -1,7 +1,4 @@
 ---
-- name: petclinicapp
-
-  tasks:
   - name: Add the user for petclinic
     ansible.builtin.user:
       - name: petclinic
@@ -29,4 +26,3 @@
       - name: petclinic
       - state: restarted
       - enabled: yes
-        
