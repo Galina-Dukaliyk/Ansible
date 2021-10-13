@@ -1,5 +1,5 @@
 ---
-- hosts: all
+- hosts: petclinic
   become: true
   roles:
     - base
