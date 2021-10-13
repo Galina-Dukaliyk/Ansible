@@ -1,28 +1,28 @@
 ---
 - name: Add the user for petclinic
   ansible.builtin.user:
-      - name: petclinic
-      - shell: /usr/bin/false
-      - system: yes
+    name: petclinic
+    shell: /usr/bin/false
+    system: yes
 
 
 - name: Create a directory petclinic
   ansible.builtin.file:
-      - path: /opt/petclinic
-      - state: directory
-      - owner: petclinic
-      - group: petclinic
-      - recurse: yes
+    path: /opt/petclinic
+    state: directory
+    owner: petclinic
+    group: petclinic
+    recurse: yes
 
 - name: template petclinic service file
   ansible.builtin.template:
-      - src: petclinic.service.j2
-      - dest: /etc/systemd/system/petclinic.service
-      - notify:
-        - Daemon_reload
+    src: petclinic.service.j2
+    dest: /etc/systemd/system/petclinic.service
+    notify:
+      - Daemon_reload
 
 - name: started petclinic as service
   ansible.builtin.service:
-      - name: petclinic
-      - state: restarted
-      - enabled: yes
+    name: petclinic
+    state: restarted
+    enabled: yes
