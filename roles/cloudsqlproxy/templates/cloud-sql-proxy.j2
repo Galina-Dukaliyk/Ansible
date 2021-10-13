@@ -6,7 +6,7 @@ After=networking.service
 
 [Service]
 WorkingDirectory=/usr/local/bin
-ExecStart=/usr/local/bin/cloud_sql_proxy -dir=/var/run/cloud-sql-proxy -instances=gcp-2021-2-phase2-dykaliuk:europe-west1:petclinic-db-dykaliuk=tcp:3306
+ExecStart=/usr/local/bin/cloud_sql_proxy -dir=/var/run/cloud-sql-proxy -instances=gcp-2021-2-phase2-dykaliuk:europe-west1:petclinic-db-tf-1002471437723=tcp:3306
 Restart=always
 StandardOutput=journal
 User=root
