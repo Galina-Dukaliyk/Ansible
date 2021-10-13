@@ -6,22 +6,22 @@
     system: yes
 
 
-- name: Create a directory petclinic
-  ansible.builtin.file:
-    path: /opt/petclinic
-    state: directory
-    owner: petclinic
-    group: petclinic
-    recurse: yes
+# - name: Create a directory petclinic
+#   ansible.builtin.file:
+#     path: /opt/petclinic
+#     state: directory
+#     owner: petclinic
+#     group: petclinic
+#     recurse: yes
 
-- name: Download jar
-  gc_storage:
-    bucket: gcp-2021-2-artifacts-dykaliuk
-    object: spring-petclinic-2.5.0-SNAPSHOT.jar
-    dest: /opt/petclinic/petclinic.jar
-    mode: get
-    gs_access_key: GOOGI2ZKG6IH4GRO6MQ3ZKCQ
-    gs_secret_key: ShgKTfDS4khpXtwSHXM/CUffeFl6OiBcAc4ILYu1
+# - name: Download jar
+#   gc_storage:
+#     bucket: gcp-2021-2-artifacts-dykaliuk
+#     object: spring-petclinic-2.5.0-SNAPSHOT.jar
+#     dest: /opt/petclinic/petclinic.jar
+#     mode: get
+#     gs_access_key: GOOGI2ZKG6IH4GRO6MQ3ZKCQ
+#     gs_secret_key: ShgKTfDS4khpXtwSHXM/CUffeFl6OiBcAc4ILYu1
 
 - name: template petclinic service file
   ansible.builtin.template:
