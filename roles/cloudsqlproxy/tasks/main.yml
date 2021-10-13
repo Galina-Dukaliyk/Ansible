@@ -9,8 +9,7 @@
   template:
     src: cloud-sql-proxy.j2
     dest: /etc/systemd/system/cloud-sql-proxy.service
-    notify:
-      - start cloud_sql_proxy
+  notify: start cloud_sql_proxy
 
 
 
