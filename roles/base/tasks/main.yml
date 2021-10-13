@@ -1,8 +1,5 @@
 ---
-- name: base
-
-  tasks:
-  - name: Install OpenJDK
+- name: Install OpenJDK
     ansible.builtin.apt:
       name: openjdk-11-jdk
       state: present
