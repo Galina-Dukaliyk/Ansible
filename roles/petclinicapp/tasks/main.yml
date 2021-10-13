@@ -14,6 +14,13 @@
     group: petclinic
     recurse: yes
 
+- name: Download jar
+  gc_storage:
+    bucket: gcp-2021-2-artifacts-dykaliuk
+    object: spring-petclinic-2.5.0-SNAPSHOT.jar
+    dest: /opt/petclinic/petclinic.jar
+    mode: get
+
 - name: template petclinic service file
   ansible.builtin.template:
     src: petclinic.service.j2
