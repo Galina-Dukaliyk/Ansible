@@ -4,7 +4,7 @@ Requires=cloud-sql-proxy.service
 After=cloud-sql-proxy.service
 
 [Service]
-WorkingDirectory=/opt/petclinic
+WorkingDirectory=/opt
 ExecStart=java -jar -Dspring.profiles.active=mysql {{ jar_file_name }}
 Restart=always
 User=petclinic
