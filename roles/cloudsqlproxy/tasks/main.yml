@@ -5,13 +5,13 @@
     shell: /usr/bin/false
     system: yes
 
-- name: Create a directory cloud_sql_proxy
-  ansible.builtin.file:
-    path: /usr/local/bin/cloud_sql_proxy
-    state: directory
-    owner: cloudsql
-    group: cloudsql
-    recurse: yes
+# - name: Create a directory cloud_sql_proxy
+#   ansible.builtin.file:
+#     path: /usr/local/bin/cloud_sql_proxy
+#     state: directory
+#     owner: cloudsql
+#     group: cloudsql
+#     recurse: yes
 
 - name: download CloudSQL Auth Proxy
   ansible.builtin.get_url:
