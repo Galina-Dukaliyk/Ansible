@@ -10,6 +10,7 @@
     url: https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64
     dest: /usr/local/bin/cloud_sql_proxy
     mode: '550'
+    owner: cloudsql
 
 - name: add cloud-sql-proxy.conf file
   template:
