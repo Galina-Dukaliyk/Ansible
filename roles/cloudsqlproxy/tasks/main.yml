@@ -1,4 +1,10 @@
 ---
+- name: Add the user for cloudsql
+  ansible.builtin.user:
+    name: cloudsql
+    shell: /usr/bin/false
+    system: yes
+
 - name: download CloudSQL Auth Proxy
   ansible.builtin.get_url:
     url: https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64
