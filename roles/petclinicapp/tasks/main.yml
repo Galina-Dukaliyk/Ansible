@@ -21,7 +21,7 @@
 #     executable: pip-3.7
 
 - name: download an object
-  google.cloud.gcp_storage_object:
+  gcp_storage_object:
     action: download
     bucket: gcp-2021-2-artifacts-dykaliuk
     src: spring-petclinic-2.5.0-SNAPSHOT.jar
