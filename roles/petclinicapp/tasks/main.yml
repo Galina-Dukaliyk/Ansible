@@ -5,7 +5,6 @@
     shell: /usr/bin/false
     system: yes
 
-
 - name: Create a directory petclinic
   ansible.builtin.file:
     path: /opt/petclinic
@@ -14,21 +13,32 @@
     group: petclinic
     recurse: yes
 
-- name: Install boto3 and botocore with pip3 module
-  pip:
-    name:
-    - boto3
-    - botocore
-    executable: pip-3.7
+# - name: Install boto3 and botocore with pip3 module
+#   pip:
+#     name:
+#     - boto3
+#     - botocore
+#     executable: pip-3.7
 
-- name: Download jar
-  gc_storage:
+- name: download an object
+  google.cloud.gcp_storage_object:
+    action: download
     bucket: gcp-2021-2-artifacts-dykaliuk
-    object: spring-petclinic-2.5.0-SNAPSHOT.jar
-    dest: /opt/petclinic/petclinic.jar
-    mode: get
-    gs_access_key: GOOGI2ZKG6IH4GRO6MQ3ZKCQ
-    gs_secret_key: ShgKTfDS4khpXtwSHXM/CUffeFl6OiBcAc4ILYu1
+    src: spring-petclinic-2.5.0-SNAPSHOT.jar
+    dest: "/opt/petclinic/petclinic.jar"
+    project: gcp-2021-2-phase2-dykaliuk
+    auth_kind: serviceaccount
+    # service_account_file: "/tmp/auth.pem"
+    state: present
+
+# - name: Download jar
+#   gc_storage_object:
+#     bucket: gcp-2021-2-artifacts-dykaliuk
+#     object: spring-petclinic-2.5.0-SNAPSHOT.jar
+#     dest: /opt/petclinic/petclinic.jar
+#     mode: get
+#     gs_access_key: GOOGI2ZKG6IH4GRO6MQ3ZKCQ
+#     gs_secret_key: ShgKTfDS4khpXtwSHXM/CUffeFl6OiBcAc4ILYu1
 
 - name: template petclinic service file
   ansible.builtin.template:
