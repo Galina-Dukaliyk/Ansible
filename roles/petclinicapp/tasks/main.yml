@@ -28,6 +28,7 @@
     dest: "/opt/petclinic/spring-petclinic-2.5.0-SNAPSHOT.jar"
     project: gcp-2021-2-phase2-dykaliuk
     auth_kind: application
+    overwrite: yes
     # service_account_file: "/tmp/auth.pem"
     state: present
 
