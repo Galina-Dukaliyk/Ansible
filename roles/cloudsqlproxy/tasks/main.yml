@@ -1,7 +1,7 @@
 ---
 - name: Add the user for cloudsql
   ansible.builtin.user:
-    name: {{ cloudsql_srvc_user_name }}
+    name: "{{ cloudsql_srvc_user_name }}"
     shell: /usr/bin/false
     system: yes
 
