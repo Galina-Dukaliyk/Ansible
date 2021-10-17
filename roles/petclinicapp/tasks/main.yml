@@ -1,16 +1,16 @@
 ---
 - name: Add the user for petclinic
   ansible.builtin.user:
-    name: {{ petclinic_srvc_user_name }}
+    name: "{{ petclinic_srvc_user_name }}"
     shell: /usr/bin/false
     system: yes
 
 - name: Create a directory petclinic
   ansible.builtin.file:
-    path: {{ petclinic_dir }}
+    path: "{{ petclinic_dir }}"
     state: directory
-    owner: {{ petclinic_srvc_user_name }}
-    group: {{ petclinic_srvc_user_name }}
+    owner: "{{ petclinic_srvc_user_name }}"
+    group: "{{ petclinic_srvc_user_name }}"
     recurse: yes
 
 - name: copy petclinic jar from bucket
