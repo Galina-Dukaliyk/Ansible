@@ -1,10 +1,4 @@
 ---
-# - name: start cloud_sql_proxy
-#     -service:
-#       name: cloud-sql-proxy
-#       state: started
-#       enabled: yes
-
 
 - name: start cloud_sql_proxy
   ansible.builtin.systemd:

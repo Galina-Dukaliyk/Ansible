@@ -1,5 +1,10 @@
 ---
-
-- name: Daemon_reload
+- name: start petclinic service
   ansible.builtin.systemd:
+    state: restarted
     daemon_reload: yes
+    name: petclinic
+    enabled: yes
+# - name: Daemon_reload
+#   ansible.builtin.systemd:
+#     daemon_reload: yes

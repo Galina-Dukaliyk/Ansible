@@ -5,7 +5,7 @@ After=cloud-sql-proxy.service
 
 [Service]
 WorkingDirectory=/opt/petclinic
-ExecStart=java -jar -Dspring.profiles.active=mysql {{ jar_file_name }}
+ExecStart=java -jar -Dspring.profiles.active=mysql {{ petclinic_local_file_name }}
 Restart=always
 User=petclinic
 

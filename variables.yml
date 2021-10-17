@@ -1,0 +1,8 @@
+cloudsql_srvc_user_name: cloudsql
+cloud_sql_proxy_file_path: /usr/local/bin
+cloudsql_connection_name: 'gcp-2021-2-phase2-dykaliuk:europe-west1:petclinic-db-tf-77022805632'
+petclinic_srvc_user_name: petclinic
+petclinic_dir: /opt/petclinic
+petclinic_source_bucket: gcp-2021-2-artifacts-dykaliuk
+petclinic_source_file: spring-petclinic-2.5.0-SNAPSHOT.jar
+petclinic_local_file_name: petclinic.jar
