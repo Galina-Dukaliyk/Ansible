@@ -8,9 +8,9 @@
 - name: download CloudSQL Auth Proxy
   ansible.builtin.get_url:
     url: https://dl.google.com/cloudsql/cloud_sql_proxy.linux.amd64
-    dest: "{{ cloud_sql_proxy_file_path }}/cloud_sql_proxy"
+    dest: "{{ cloud_sql_proxy_file_path }}"/cloud_sql_proxy
     mode: '550'
-    owner: "{{ cloudsql_srvc_user_name }}"
+    owner: {{ cloudsql_srvc_user_name }}
 
 - name: add cloud-sql-proxy.conf file
   template:
