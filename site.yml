@@ -2,7 +2,7 @@
 - hosts: petclinic
   become: true
   vars_files:
-    - /variables.yml
+    - ./variables.yml
   roles:
     - base
     - cloudsqlproxy
